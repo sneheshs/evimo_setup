@@ -26,6 +26,7 @@ docker run -it \
     --workdir="/home/$USER" \
     --volume="/home/$USER/evimo_setup/docker_home:/home/$USER" \
     --volume="/home/$USER/evimo_setup/catkin_ws:/home/$USER/catkin_ws" \
+    --volume="/home/$USER/evimo_data:/home/$USER/evimo_data" \
     --volume="/etc/group:/etc/group:ro" \
     --volume="/etc/passwd:/etc/passwd:ro" \
     --volume="/etc/shadow:/etc/shadow:ro" \
@@ -39,17 +40,4 @@ Once inside test compilation with:
 ```bash
 cd catkin_ws
 catkin_make
-```
-
-# Old information
-## libcaer only needed for full rpg_davis_ros build
-From: https://gitlab.com/inivation/dv/libcaer
-
-```bash
-cd ..
-git clone https://gitlab.com/inivation/dv/libcaer.git
-cd libcaer
-cmake -DCMAKE_INSTALL_PREFIX=/usr .
-make -j8
-sudo make install
 ```
