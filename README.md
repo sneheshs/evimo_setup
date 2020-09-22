@@ -7,6 +7,9 @@ Build docker container
 Create the catkin workspace
 `./initialize_ev_imo_catkin_workspace.sh`
 
+Create a fake home directory for the docker container (else the owner gets set to root by docker run)
+`mkdir docker_home`
+
 Run docker container from evimo_setup folder
 Flags allow:
 * Creates a fake home directory with same name as host user for roscore to store things
