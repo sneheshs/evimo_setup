@@ -13,5 +13,9 @@ RUN apt-get update \
     libyaml-cpp-dev \
     libzip-dev \
     git \
+    python3-pip \
+    python3-tk \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
+
+RUN pip3 install matplotlib pyquaternion scipy
