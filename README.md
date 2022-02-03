@@ -21,12 +21,12 @@ Flags allow:
 
 ```bash
 docker run -it \
-    --user=(id -u $USER):(id -g $USER) \
+    --user=$(id -u $USER):$(id -g $USER) \
     --env="DISPLAY" \
     --workdir="/home/$USER" \
-    --volume=(pwd)"/../evimo_setup/docker_home:/home/$USER" \
-    --volume=(pwd)"/../evimo_setup/catkin_ws:/home/$USER/catkin_ws" \
-    --volume=(pwd)"/../evimo_data_config:/home/$USER/evimo_data_config" \
+    --volume=$(pwd)"/../evimo_setup/docker_home:/home/$USER" \
+    --volume=$(pwd)"/../evimo_setup/catkin_ws:/home/$USER/catkin_ws" \
+    --volume=$(pwd)"/../evimo_data_config:/home/$USER/evimo_data_config" \
     --volume="/etc/group:/etc/group:ro" \
     --volume="/etc/passwd:/etc/passwd:ro" \
     --volume="/etc/shadow:/etc/shadow:ro" \
